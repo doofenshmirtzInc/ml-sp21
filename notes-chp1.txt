@@ -1,0 +1,148 @@
+READING 1: CHAPTER 1 OF HANDS ON MACHINE LEARNING WITH SCIKET LEARN AND TENSORFLOW
+
+-> what is machine learning?
+a computer program is said to learn from experience # with respect to some task T and some performance measure P, if its performance on T, as measured by P, improves with experience E
+
+
+MACHINE LEARNING IS GREAT FOR:
+-problems for which existing solutions require a lot of hand-tuning or long lists of rules: one Machine Learning algorithm can often simplify code and perform better
+- complex problems for which there is no good solution at all using a traditional approach: the best Machine learning techniques can find a solution
+- Fluctuating environments:: a machine learning system can adapt to new data
+- getting insights about complex problems and large amounts of data
+
+
+CLASSIFICATION OF ML SYSTEMS BASED ON:
+Whether or not the are trained with human supervision
+- supervised, unsupervised, semisupervised, Reinforcement learning
+whether of not they can learn incrementally on the fly
+- online vs batch learning
+whether they work by comparign new data points to know data points, or instead detect patterns in the tgraining data and build a predictive model
+- instance based vs model based learning
+
+
+SOME OF THE MOST IMPORTANT SUPERVISED LEARNING ALGORITHMS:
+- kNN
+- linear regression
+- logistic regression
+- support vector machines (SVMs)
+- decision trees and random forests
+- neural nets
+
+
+SOME OF THE MOST IMPORTANT UNSUPERVISED LEARNING ALGORITHMS:
+- Clustering
+-- k-means
+-- hierarchical cluster analysis (HCA)
+-- expectation maximization
+
+- visualization and dimensionality reduction
+-- principal component analysis (PCA)
+-- kernel PCA
+-- locally-linear embedding (LLE)
+-- t-distributed stochastic neighbor embedding (t-SNE)
+
+- association rule learning
+-- apriori
+-- eclat
+
+
+
+BATCH LEARNING VS ONLINE LEARNING:
+ml systems are also classified based on whether or not they learn in batches or through a constant stream of incoming data
+
+
+BATCH LEARNING:
+- system is incapable of learning incrementally
+- generally resource intensive so typically done offline
+- system is first trained and the launched into production
+-- runs without learning anymore
+- also called "offline learning"
+
+
+if you want to include new data as time goes on, have to retrain a whole new system and replace the old system with the newly trained
+
+however, this process is fairly easy to automate so not too bad
+
+ONLINE LEARNING:
+- train the system incrementally by feeding data sequentially (either individually of in small groups referred to as mini-batches)
+- each learning step is fast and cheap so the system can learn about new data on the fly
+- good option if you have limited computational resources
+-- once an online learning system has learned about new data, it does not need them anymore, so you can discard the data instances
+
+- onlinhe learning can also be used to train systems on huge datasets that cannot fit in one machine's main memory(this is called "out-of-core" learning)
+-- the algorithm loads part of the data, runs a training step on that data, and reapeats the process until it has run on all the data
+---- the whole process is usually done offline rather than on the live system, so may be better to think of it as "incremental learning" instead
+
+-learning rate: how fast the system adapts to new data
+-- fast learning rate means system adapts rapidly, but will tend to forget old data faster (there is a tradeoff)
+
+
+INSTANCE-BASED VS MODEL-BASED LEARNING
+*there are two main approaches to generalization for ml systems
+
+instance based learning
+- generalizing to new data based on measures of similarity (ie. number of similar words in a particular email to that of the known spam emails)
+
+model based learning
+-build a model from the examples (ie linear classifier) and make predictions based on that model
+
+
+MAIN CHALLENGES OF MACHINE LEARNING:
+the two things that go wrong
+- bad algorithm/model
+- bad data
+
+
+eg.
+* bad data
+-insufficient training data
+- non-representative training data
+- poor quality data (excessive noise, missing values, etc)
+- irrelavant features
+* bad models/algorithms
+- overfitting the training data
+- underfitting training data
+
+
+using a validation set from the training data:
+- grandparent of cross-validation
+- hold out a certain percentage of the training data to use as a test for the model
+- the typical ratio used is 80% used to train, 20% used to validate/test
+
+
+NO FREE LUNCH THEOREM: *INTERESTING*
+- a model is a simplified versino of the observations/data
+- simplificatins meant to discard superfluous details that are unlikely to generalize to new instances.
+- to decide what data ot keep, have to make assumptions pertaining to the real world compared with the data provided
+- eg. linear model makes assumption that hte data is fundamentally linear and that distance between data points and line is just noise to be ignored
+
+- David Wolpert demonstrated that if you make absolutely no assumption about the data, the there is no reason to prefer one model over any other.
+
+**NO FREE LUNCH (NFL) THEOREM**
+*** there is no model "a priori" that is guaranteed to work better for a given dataset
+
+- the only way to know for sure which model is best is to evaluate them all
+** this is not possible in practice so it becomes necessary to make reasonable assumptions about the data
+- ie. for simple problem, may use linear model whereas for complex problem may try various neural nets
+
+
+questions to answer for the chapter:
+1. how would you define machine learning?
+2. can you name four types of problems where it shines?
+3. what is a labeled training set?
+4. what are the two most common supervised tasks?
+5. can yo uname four common unsupervised tasks?
+6. what type of machine learning algorithm would you use to allow a robot to walk in various unknown terrains?
+7. what type of algorithm would you use to segment your customers into multiple groups?
+8. would you frame the problem of spam detection as a supervised learning problem or an unsupervised learning problem?
+9. what is an online learning system?
+10. what is out-of-core learning?
+11. what type of learning algorithm relies on a similarity measure to make predictions?
+12. what is the difference between a model parameter and a learning algorithm's hyperparameter?
+13. what do model-based learning algorithms search for? what is hte most common strategy they use to succeed? how do they make predictions?
+14. can you name four of the main challenges in machine learning?
+15. if your model performs great on the training data but generalizes poorly to new instances, what is happening? can you name three possible solutions?
+16. what is a test set and why would you want to use it?
+17. what is hte purpose of a validation set?
+18. what can go wrong if you tune hyperparameters using the test set?
+19. what is cross-validatoin and why would you prefer it to a validation set?
