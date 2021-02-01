@@ -1,0 +1,58 @@
+january 26, 2021
+
+
+
+tophat questions:
+what are three main branches of machine learning:
+- supervised, unsupervised, reinforcement learning
+what is labeled data?
+--he had some rather weird answer choices, we'll have to wait and see what he says is the answer
+one-hot-encoding is an example structure that can be used for linear regression?
+-- again, very weird
+what type of algorithm would you use to segment your customers into multiple groups?
+- clustering
+
+
+
+*********ACTUAL START OF MATERIAL***********
+
+- no data, no learning
+-- purely data driven
+
+- three potential challenges of machine learning
+-- bad algorithm: the algorithm is not good enough for this particular problem
+-- bad data: data is not good enough
+-- bad evaluation: metrics aren't indicative of future usage
+
+
+THE BAD DATA PROBLEM:
+- the "bad data problem" will be the focus of the lecture today
+example of bad evaluation:
+- sibling blaring music in background
+- when trying to measure success of removing noise from signal, the metric you use may not be good
+
+THE UNREASONABLE EFFECTIVENESS OF DATA:
+- in school, algorithms are the focus
+- in work, it is often the data that matters most
+- microsoft researches showed that different algorithms performed almost identically all on a complex NLP problem once enough data was given
+
+
+MAIN CHALLENGES OF ML
+1. insufficient quantity of training data
+2. nonerpresentative training data
+- the data you have *must* be representative of the data you expect to see
+-- otherwise, you wont be able to generalize
+-sampling bias
+-- the data collected, sampled, is bias/ not varied enough
+-- if you poll only republicans who they are voting for, you would be convinced that trump was going to win the election
+3. poor quality data
+- often need to clean data in this scenario
+-- discard or remove outliers
+-- ignore missing features/attributes, a particular instance, or fill in values
+-- find/collect replacement data
+4. irrelevant features
+- garbage in, garbage out
+- feature engineering may be needed
+-- selection: select most useful features
+-- extraction: combine existing features
+-- creation: create new features from new data
