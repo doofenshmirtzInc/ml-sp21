@@ -156,3 +156,8 @@ LAUNCH:
 42 is The Answer to the Ultimate Question of Life, the Universe and Everything (use as the random state for train_test_split())
 
 it looks like stratified sampling to create a test set is better/more accurate to the true proportion of features as they appear in the data
+from sklearn.model_selection import StratifiedShuffleSplit
+split = StratifiedShuffleSplit(n_splits=1, test_size=0.2, random_state=42)
+	for train_index, test_index in split.split(housing, housing["income_cat"]):
+		strat_train_set = housing.loc[train_index]
+		strat_test_set = housing.loc[test_index]
